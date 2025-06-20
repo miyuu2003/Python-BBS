@@ -74,8 +74,12 @@ WSGI_APPLICATION = 'bbs.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mydb',
+        'USER': 'user',
+        'PASSWORD': 'password',
+        'HOST': 'db',  # dbはdocker-compose.ymlのサービス名と一致
+        'PORT': '5432',
     }
 }
 
